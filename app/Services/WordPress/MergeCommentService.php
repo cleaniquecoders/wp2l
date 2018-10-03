@@ -24,7 +24,7 @@ class MergeCommentService
         $author = \App\Models\User::whereEmail(config('wp2l.default_author_email'))->firstOrFail();
 
         foreach ($this->comments as $comment) {
-            if(\App\Models\Post::whereId($comment->post)->count() > 0) {
+            if (\App\Models\Post::whereId($comment->post)->count() > 0) {
                 \App\Models\Comment::create([
                     'id'                 => $comment->id,
                     'parent_id'          => (0 == $comment->parent) ? null : $comment->parent,
