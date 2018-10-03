@@ -56,8 +56,11 @@ class ImportService extends \App\Services\WordPress\BaseService
      */
     public function store($type, $content)
     {
-        $filename = 'wp/' . $type . '_' . \Carbon\Carbon::now()->format('YmdHis') . '.json';
-        file_put_contents(storage_path($filename), $this->json_pretty($content));
+    	$data = $this->prettyJson($content);
+    	if(!empty($data)) {
+    		$filename = 'wp/' . $type . '_' . \Carbon\Carbon::now()->format('YmdHis') . '.json';
+        	file_put_contents(storage_path($filename), $data);
+    	}
     }
 
     /**
@@ -67,10 +70,10 @@ class ImportService extends \App\Services\WordPress\BaseService
      *
      * @return json JSON Pretty Encoded
      */
-    public function json_pretty($data)
+    public function prettyJson($data)
     {
         $data = json_decode($data);
 
-        return json_encode($data, JSON_PRETTY_PRINT);
+        return empty($data) ? null : json_encode($data, JSON_PRETTY_PRINT);
     }
 }
