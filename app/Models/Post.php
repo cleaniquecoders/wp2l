@@ -14,4 +14,12 @@ class Post extends Model
     {
         return \App\Models\Tag::class;
     }
+
+    /**
+     * The categories that belong to the post.
+     */
+    public function categories()
+    {
+        $this->belongsToMany(\App\Models\Category::class, 'post_category');
+    }
 }

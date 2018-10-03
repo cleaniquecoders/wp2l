@@ -14,7 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\WordPress\ImportCommand::class,
+        Commands\WordPress\MergeCategoryCommand::class,
         Commands\WordPress\MergePostCommand::class,
+        Commands\WordPress\MergeTagCommand::class,
         Commands\ReloadAllCommand::class,
         Commands\ReloadCacheCommand::class,
         Commands\ReloadDbCommand::class,
