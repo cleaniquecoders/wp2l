@@ -16,10 +16,35 @@ class Post extends Model
     }
 
     /**
+     * The user that belongs to the post
+     */
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
+
+    /**
      * The categories that belong to the post.
      */
     public function categories()
     {
-        $this->belongsToMany(\App\Models\Category::class, 'post_category');
+        return $this->belongsToMany(\App\Models\Category::class, 'post_category');
+    }
+
+    /**
+     * @param array
+     *
+     * @return $this
+     */
+    public function attachCategories($categories)
+    {
+        $this->categories()->syncWithoutDetaching($categories);
+
+        return $this;
+    }
+
+    public function scopeWithDetails($query)
+    {
+        return $query->with('user', 'tags', 'categories');
     }
 }
