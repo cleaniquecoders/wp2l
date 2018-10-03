@@ -24,16 +24,6 @@ abstract class BaseService
     abstract public function handle();
 
     /**
-     * Create an domain of GetPost.
-     *
-     * @return App\Services\WordPress\GetPost
-     */
-    public static function make($domain)
-    {
-        return new self();
-    }
-
-    /**
      * Get Domain.
      *
      * @return string
