@@ -8,7 +8,7 @@
 			</thead>
 		@endisset
 
-		@isset($thead)
+		@isset($tbody)
 			<tbody>
 				{{ $tbody ?? '' }}
 			</tbody>

@@ -6,6 +6,7 @@ class WelcomeController extends Controller
 {
     public function __invoke()
     {
-        return view('welcome');
+        $posts = \App\Models\Post::withDetails()->latest()->paginate();
+        return view('welcome', compact('posts'));
     }
 }
