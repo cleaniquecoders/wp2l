@@ -1,0 +1,16 @@
+<?php 
+
+namespace DummyNamespace;
+
+class DummyClass 
+{
+	public function __construct()
+	{
+
+	}
+
+    public static function make()
+    {
+        return new self();
+    }
+}

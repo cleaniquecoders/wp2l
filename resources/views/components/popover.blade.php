@@ -1,0 +1,5 @@
+title="{{ $popover_title ?? }}" 
+data-toggle="popover" 
+data-trigger="focus" 
+data-placement="{{ $popover_placement ?? 'top' }}"
+data-content="{{ $popover_content ?? '' }}"
