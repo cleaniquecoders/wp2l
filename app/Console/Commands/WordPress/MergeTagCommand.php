@@ -28,11 +28,11 @@ class MergeTagCommand extends MergeBaseCommand
     protected $type = 'tags';
 
     /**
-     * The tables to be truncate
+     * The tables to be truncate.
      *
      * @var array
      */
     protected $tables = [
-         'taggables', 'tags'
+         'taggables', 'tags',
     ];
 }

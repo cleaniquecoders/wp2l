@@ -28,7 +28,7 @@ class MergePostCommand extends MergeBaseCommand
     protected $type = 'posts';
 
     /**
-     * The tables to be truncate
+     * The tables to be truncate.
      *
      * @var array
      */

@@ -22,8 +22,6 @@ class MergeBaseCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -31,29 +29,7 @@ class MergeBaseCommand extends Command
     }
 
     /**
-     * Return Full Path of File Format to Fetch
-     * 
-     * @return string
-     */
-    protected function getPath()
-    {
-        return storage_path('wp/' . $this->type . '*.json');
-    }
-
-    /**
-     * Get FQCN of the Service Class
-     * 
-     * @return string
-     */
-    protected function getClass()
-    {
-        return '\App\Services\WordPress\Merge' . studly_case(str_singular($this->type)) . 'Service';
-    }
-
-    /**
-     * Truncate tables
-     * 
-     * @return void
+     * Truncate tables.
      */
     public function truncateTables()
     {
@@ -80,5 +56,25 @@ class MergeBaseCommand extends Command
                 $class = $this->getClass();
                 (new $class($file))->handle();
             });
+    }
+
+    /**
+     * Return Full Path of File Format to Fetch.
+     *
+     * @return string
+     */
+    protected function getPath()
+    {
+        return storage_path('wp/' . $this->type . '*.json');
+    }
+
+    /**
+     * Get FQCN of the Service Class.
+     *
+     * @return string
+     */
+    protected function getClass()
+    {
+        return '\App\Services\WordPress\Merge' . studly_case(str_singular($this->type)) . 'Service';
     }
 }
