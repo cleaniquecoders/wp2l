@@ -34,7 +34,9 @@ class MergePostService
                 'published_at'     => ('publish' == $post->status) ? (\Carbon\Carbon::parse($post->date)) : null,
                 'created_at'       => \Carbon\Carbon::parse($post->modified),
                 'updated_at'       => \Carbon\Carbon::parse($post->modified),
-            ])->attachTags($this->getTags($post->tags));
+            ])
+            ->attachCategories($this->getCategories($post->categories))
+            ->attachTags($this->getTags($post->tags));
         }
     }
 
@@ -42,6 +44,13 @@ class MergePostService
     {
         return \App\Models\Tag::whereIn('id', $tag_ids)->get()->map(function ($tag) {
             return $tag->getTranslation('name', 'en');
+        });
+    }
+
+    private function getCategories($category_ids)
+    {
+        return \App\Models\Category::whereIn('id', $category_ids)->get()->map(function ($tag) {
+            return $tag->id;
         });
     }
 }
