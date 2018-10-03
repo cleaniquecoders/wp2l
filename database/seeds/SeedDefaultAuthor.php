@@ -6,8 +6,6 @@ class SeedDefaultAuthor extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
@@ -16,9 +14,9 @@ class SeedDefaultAuthor extends Seeder
             'email'    => config('wp2l.default_author_email'),
             'password' => bcrypt(config('wp2l.default_author_password')),
         ])->assignRole([
-        	'developer',
-	        'administrator',
-	        'user'
+            'developer',
+            'administrator',
+            'user',
         ]);
     }
 }

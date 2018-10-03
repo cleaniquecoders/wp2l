@@ -19,9 +19,7 @@ class ImportService extends \App\Services\WordPress\BaseService
     protected $total_pages;
 
     /**
-     * Handle Request
-     * 
-     * @return void
+     * Handle Request.
      */
     public function handle()
     {
@@ -56,11 +54,11 @@ class ImportService extends \App\Services\WordPress\BaseService
      */
     public function store($type, $content)
     {
-    	$data = $this->prettyJson($content);
-    	if(!empty($data)) {
-    		$filename = 'wp/' . $type . '_' . \Carbon\Carbon::now()->format('YmdHis') . '.json';
-        	file_put_contents(storage_path($filename), $data);
-    	}
+        $data = $this->prettyJson($content);
+        if (! empty($data)) {
+            $filename = 'wp/' . $type . '_' . \Carbon\Carbon::now()->format('YmdHis') . '.json';
+            file_put_contents(storage_path($filename), $data);
+        }
     }
 
     /**
