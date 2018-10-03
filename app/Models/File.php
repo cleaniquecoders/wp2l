@@ -4,8 +4,9 @@ namespace App\Models;
 
 use App\Traits\HasMediaExtended;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class Media extends Model
+class File extends Model implements HasMedia
 {
     use HasMediaExtended;
 

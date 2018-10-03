@@ -40,5 +40,6 @@ class MergeAllCommand extends Command
         $this->call('wp:merge:posts');
         $this->call('wp:merge:comments');
         $this->call('wp:merge:pages');
+        $this->call('wp:merge:media');
     }
 }

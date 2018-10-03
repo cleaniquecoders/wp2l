@@ -18,9 +18,11 @@ return [
     \App\Observers\HashidsObserver::class => [
         \App\Models\Category::class,
         \App\Models\Comment::class,
+        \App\Models\File::class,
         \App\Models\Media::class,
         \App\Models\Page::class,
         \App\Models\Post::class,
         \App\Models\User::class,
+        \Spatie\MediaLibrary\Models\Media::class,
     ],
 ];

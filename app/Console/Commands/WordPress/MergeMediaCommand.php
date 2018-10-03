@@ -33,6 +33,6 @@ class MergeMediaCommand extends MergeBaseCommand
      * @var array
      */
     protected $tables = [
-         'media',
+         'files', 'media',
     ];
 }
