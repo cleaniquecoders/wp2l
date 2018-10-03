@@ -1,7 +1,7 @@
 {
-    "name": "cleaniquecoders/laravel-boilerplate",
-    "description": "Web Application Boilerplate Based on Laravel Framework.",
-    "keywords": ["framework", "laravel", "osinitiative", "web-app-boilerplate"],
+    "name": "cleaniquecoders/wp2l",
+    "description": "A project to migrate from existing WordPress to Laravel based by fetching WordPress API.",
+    "keywords": ["framework", "laravel", "wordpress", "migration"],
     "license": "MIT",
     "type": "project",
     "require": {

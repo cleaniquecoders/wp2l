@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/cleaniquecoders/laravel-boilerplate.svg?branch=master)](https://travis-ci.org/cleaniquecoders/laravel-boilerplate) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/v/stable)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/downloads)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate) [![License](https://poser.pugx.org/cleaniquecoders/laravel-boilerplate/license)](https://packagist.org/packages/cleaniquecoders/laravel-boilerplate)
+[![Build Status](https://travis-ci.org/cleaniquecoders/wp2l.svg?branch=master)](https://travis-ci.org/cleaniquecoders/wp2l) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/wp2l/v/stable)](https://packagist.org/packages/cleaniquecoders/wp2l) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/wp2l/downloads)](https://packagist.org/packages/cleaniquecoders/wp2l) [![License](https://poser.pugx.org/cleaniquecoders/wp2l/license)](https://packagist.org/packages/cleaniquecoders/wp2l)
 
 # WordPress to Laravel
 
@@ -7,7 +7,7 @@ A project to migrate from existing WordPress to Laravel based by fetching WordPr
 ## Installation
 
 ```
-$ composer create-project cleaniquecoders/laravel-boilerplate
+$ composer create-project cleaniquecoders/wp2l
 ```
 
 Configure your `.env`, then:
