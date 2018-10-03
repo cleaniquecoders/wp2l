@@ -18,6 +18,7 @@ return [
     ],
     \App\Observers\HashidsObserver::class => [
         \App\Models\User::class,
+        \App\Models\Post::class,
         \Spatie\MediaLibrary\Media::class,
     ],
 ];
