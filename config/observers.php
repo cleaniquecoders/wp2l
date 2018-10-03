@@ -16,9 +16,11 @@ return [
     \App\Observers\ReferenceObserver::class => [
     ],
     \App\Observers\HashidsObserver::class => [
-        \App\Models\User::class,
-        \App\Models\Post::class,
         \App\Models\Category::class,
-        \Spatie\MediaLibrary\Media::class,
+        \App\Models\Comment::class,
+        \App\Models\Media::class,
+        \App\Models\Page::class,
+        \App\Models\Post::class,
+        \App\Models\User::class,
     ],
 ];

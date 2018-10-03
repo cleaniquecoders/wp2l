@@ -32,7 +32,7 @@ class MergePostService
                 'excerpt'          => $post->excerpt->rendered,
                 'is_published'     => ('publish' == $post->status) ? true : false,
                 'published_at'     => ('publish' == $post->status) ? (\Carbon\Carbon::parse($post->date)) : null,
-                'created_at'       => \Carbon\Carbon::parse($post->modified),
+                'created_at'       => \Carbon\Carbon::parse($post->date),
                 'updated_at'       => \Carbon\Carbon::parse($post->modified),
             ])
             ->attachCategories($this->getCategories($post->categories))

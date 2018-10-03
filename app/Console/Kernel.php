@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\WordPress\ImportCommand::class,
         Commands\WordPress\MergeAllCommand::class,
         Commands\WordPress\MergeCategoryCommand::class,
+        Commands\WordPress\MergePageCommand::class,
         Commands\WordPress\MergePostCommand::class,
         Commands\WordPress\MergeTagCommand::class,
         Commands\ReloadAllCommand::class,

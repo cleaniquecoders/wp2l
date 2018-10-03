@@ -16,7 +16,7 @@ class Post extends Model
     }
 
     /**
-     * The user that belongs to the post
+     * The user that belongs to the post.
      */
     public function user()
     {
@@ -29,6 +29,14 @@ class Post extends Model
     public function categories()
     {
         return $this->belongsToMany(\App\Models\Category::class, 'post_category');
+    }
+
+    /**
+     * The comments that belong to the post.
+     */
+    public function comments()
+    {
+        return $this->hasMany(\App\Models\Comment::class);
     }
 
     /**
@@ -45,6 +53,6 @@ class Post extends Model
 
     public function scopeWithDetails($query)
     {
-        return $query->with('user', 'tags', 'categories');
+        return $query->with('user', 'tags', 'categories', 'comments');
     }
 }

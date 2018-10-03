@@ -22,8 +22,6 @@ class MergeAllCommand extends Command
 
     /**
      * Create a new command instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -40,5 +38,7 @@ class MergeAllCommand extends Command
         $this->call('wp:merge:tags');
         $this->call('wp:merge:categories');
         $this->call('wp:merge:posts');
+        $this->call('wp:merge:comments');
+        $this->call('wp:merge:pages');
     }
 }
