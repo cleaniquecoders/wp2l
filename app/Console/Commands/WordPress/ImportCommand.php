@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\WordPress;
 
 use Illuminate\Console\Command;
 
-class ImportWpCommand extends Command
+class ImportCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'import:wp {domain}';
+    protected $signature = 'wp:import {domain}';
 
     /**
      * The console command description.
@@ -37,13 +37,22 @@ class ImportWpCommand extends Command
     {
         $domain = $this->argument('domain') . '/wp-json/wp/v2/';
         $this->info('Domain: ' . $domain);
-        collect(['posts', 'pages', 'categories', 'comments', 'tags', 'media'])
+        $this->cleanUp();
+        collect(config('wp2l.types'))
             ->each(function ($fetch) use ($domain) {
                 $this->info('Fetch: ' . $fetch);
                 (new \App\Services\WordPress\ImportService())
                     ->setDomain($domain)
                     ->setUri($fetch)
                     ->handle();
+            });
+    }
+
+    private function cleanUp()
+    {
+        collect(glob(storage_path('wp/*.json')))
+            ->each(function ($path) {
+                unlink($path);
             });
     }
 }

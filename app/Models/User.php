@@ -110,4 +110,9 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasRole('user');
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

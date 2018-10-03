@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\ImportWpCommand::class,
+        Commands\WordPress\ImportCommand::class,
+        Commands\WordPress\MergePostCommand::class,
         Commands\ReloadAllCommand::class,
         Commands\ReloadCacheCommand::class,
         Commands\ReloadDbCommand::class,

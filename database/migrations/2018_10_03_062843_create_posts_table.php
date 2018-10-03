@@ -17,8 +17,9 @@ class CreatePostsTable extends Migration
             $table->slug();
             $table->user();
             $table->name('title');
-            $table->text('content');
-            $table->text('original_content');
+            $table->text('content')->nullable();
+            $table->text('excerpt')->nullable();
+            $table->text('original_content')->nullable();
             $table->is('published', false);
             $table->at('published');
             $table->standardTime();
