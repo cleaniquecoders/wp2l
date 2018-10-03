@@ -12,7 +12,7 @@
                                 @foreach($posts as $post)
                                     <tr>
                                         <td>
-                                            <a href="#">{{ $post->title }}</a>
+                                            <a href="{{ route('posts.show', $post->hashslug) }}">{{ $post->title }}</a>
                                         </td>
                                         <td>
                                             {{ $post->created_at->format('d-M-Y') }}
