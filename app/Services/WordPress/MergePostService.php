@@ -23,6 +23,7 @@ class MergePostService
 
         foreach ($this->posts as $post) {
             \App\Models\Post::create([
+                'id'               => $post->id,
                 'user_id'          => $author->id,
                 'slug'             => $post->slug,
                 'title'            => $post->title->rendered,
@@ -31,6 +32,8 @@ class MergePostService
                 'excerpt'          => $post->excerpt->rendered,
                 'is_published'     => ('publish' == $post->status) ? true : false,
                 'published_at'     => ('publish' == $post->status) ? (\Carbon\Carbon::parse($post->date)) : null,
+                'created_at'       => \Carbon\Carbon::parse($post->modified),
+                'updated_at'       => \Carbon\Carbon::parse($post->modified),
             ])->attachTags($this->getTags($post->tags));
         }
     }

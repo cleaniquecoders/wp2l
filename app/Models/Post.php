@@ -8,7 +8,7 @@ class Post extends Model
 {
     use \Spatie\Tags\HasTags;
 
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     public static function getTagClassName(): string
     {
